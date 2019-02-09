@@ -1,4 +1,5 @@
 https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents
+https://github.com/jmcooper/angular-fundamentals-files
 https://github.com/Annie-Huang/ng-fundamentals
 
 Getting Started with Angular
@@ -9,6 +10,6 @@ git remote add origin git@github.com:Annie-Huang/ng-fundamentals.git
 git push -u origin master
 
 
-
+D:\react\ng-fundamentals>npm install ngf-bootstrap --save
 
 
