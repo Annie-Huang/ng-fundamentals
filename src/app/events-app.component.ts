@@ -16,10 +16,7 @@ For styles and script use the below session:
  */
 @Component({
   selector: 'events-app',
-  template: `
-    <h2>Hello World</h2>
-    <img src="/assets/images/basic-shield.png" />
-  `
+  template: `<event-list></event-list>`
 })
 export class EventsAppComponent {
   title = 'ng-fundamentals';
