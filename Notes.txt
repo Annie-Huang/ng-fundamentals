@@ -1,0 +1,14 @@
+https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents
+https://github.com/Annie-Huang/ng-fundamentals
+
+Getting Started with Angular
+#################################
+ng new ng-fundamentals
+cd ng-fundamentals/
+git remote add origin git@github.com:Annie-Huang/ng-fundamentals.git
+git push -u origin master
+
+
+
+
+
