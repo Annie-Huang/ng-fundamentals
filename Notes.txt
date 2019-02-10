@@ -105,6 +105,11 @@ Or you can return an array of strings, which represent the classes you want to a
   }
 
 
+5. Creating Reusable Angular Services
+##################################################
+let eventsService = new EventsService()
+What if elsewhere in our application we decided in some cases, we should get the data from an Ajax call 
+and in other cases, we should get them from the local browser storage. We'd have no way to use a different type of eventsService. 
 
 
 
