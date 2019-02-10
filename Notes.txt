@@ -65,7 +65,7 @@ If we completely removed this and added a back each time, Angular would have to 
 In that case, completely removing it from the DOM can be expensive. It would be better if we could just hide those elements. 
 
 
-
+Class bindings are good if you're wanting to toggle a single class. And the ngClass directive is better if you're wanting to toggle multiple classes.
 
 
 
