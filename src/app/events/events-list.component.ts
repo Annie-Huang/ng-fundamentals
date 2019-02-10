@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
 
 // <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
@@ -18,7 +18,7 @@ import {EventService} from './shared/event.service';
     </div>
   `
 })
-export class EventsListComponent {
+export class EventsListComponent implements OnInit {
   events: any[];
 
   // Remember this private syntax right here is shorthand for saying essentially that we have a property on our class like this
@@ -26,6 +26,11 @@ export class EventsListComponent {
   // eventService
   // (inside the constructor: this.eventService = eventService.
   constructor(private eventService: EventService) {
+  }
+
+  ngOnInit() {
+    // It's really not a good idea to put things in your constructor that are potentially long running.
+    // And eventually this will be an ajax call. And so this will take a little while to fetch those events.
     this.events = this.eventService.getEvents();
   }
 
