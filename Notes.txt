@@ -2,6 +2,8 @@ https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-conten
 https://github.com/jmcooper/angular-fundamentals-files
 https://github.com/Annie-Huang/ng-fundamentals
 
+https://jcoop.io/angular-practice-exercises/
+
 Getting Started with Angular
 #################################
 ng new ng-fundamentals
