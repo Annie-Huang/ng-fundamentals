@@ -44,8 +44,11 @@ There is a way to get around the CSS encapsulation if you want to apply styles t
 That's fairly well documented, so if you find you have a need for it, go check that out.
 
 
-
-
+4. Exploring the Angular Template Syntax
+#####################################################
+{{ user.name }}
+{{ 2 + 2 }}
+{{ getIt() }}
 
 
 
