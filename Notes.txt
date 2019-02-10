@@ -38,6 +38,11 @@ In event-thumbnail.component.ts
 
 The page will display 'some value'
 
+---------
+
+There is a way to get around the CSS encapsulation if you want to apply styles to a child component. All you have to do is apply the deep selector. 
+That's fairly well documented, so if you find you have a need for it, go check that out.
+
 
 
 
