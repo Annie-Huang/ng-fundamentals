@@ -50,7 +50,9 @@ That's fairly well documented, so if you find you have a need for it, go check t
 {{ 2 + 2 }}
 {{ getIt() }}
 
-
+*ngFor="let event of events"
+The first thing that stands out is this asterisk. That indicates that this ngFor directive is a structural directive. 
+Structural directives are different from other directives because structural directives actually change the shape of the DOM. 
 
 
 
