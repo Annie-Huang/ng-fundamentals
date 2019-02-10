@@ -4,14 +4,25 @@ https://github.com/Annie-Huang/ng-fundamentals
 
 https://jcoop.io/angular-practice-exercises/
 
-Getting Started with Angular
-#################################
+2. Getting Started with Angular
+#####################################
 ng new ng-fundamentals
 cd ng-fundamentals/
 git remote add origin git@github.com:Annie-Huang/ng-fundamentals.git
 git push -u origin master
 
-
 D:\react\ng-fundamentals>npm install ngf-bootstrap --save
 
 
+3. Creating and Communicating Between Angular Components
+#######################################################################
+In events-list.component.ts
+      <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
+      <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
+
+In event-thumbnail.component.ts
+  logFoo() {
+    console.log('foo');
+  }
+
+When you click 'Log me some foo', it will print 'foo'
