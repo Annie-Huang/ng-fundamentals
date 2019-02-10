@@ -67,7 +67,9 @@ In that case, completely removing it from the DOM can be expensive. It would be 
 
 Class bindings are good if you're wanting to toggle a single class. And the ngClass directive is better if you're wanting to toggle multiple classes.
 
-
+And then, I had said earlier that ngClass expects an object to be returned. That isn't exactly the whole truth.
+You can actually return an object like this or you can return a string, which is space separated list of the classes you want applied. 
+Or you can return an array of strings, which represent the classes you want to apply. 
 
 
 
