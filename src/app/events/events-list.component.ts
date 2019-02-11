@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
 
+declare let toastr;
+
 // <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
 //   <h3>{{thumbnail.someProperty}}</h3>
 // <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
@@ -12,7 +14,7 @@ import {EventService} from './shared/event.service';
       <hr />
       <div class="row">
         <div *ngFor="let event of events" class="col-md-5">
-          <event-thumbnail [event]="event"></event-thumbnail>
+          <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
         </div>
       </div>
     </div>
@@ -32,6 +34,10 @@ export class EventsListComponent implements OnInit {
     // It's really not a good idea to put things in your constructor that are potentially long running.
     // And eventually this will be an ajax call. And so this will take a little while to fetch those events.
     this.events = this.eventService.getEvents();
+  }
+
+  handleThumbnailClick(eventName) {
+    toastr.success(eventName);
   }
 
 }
