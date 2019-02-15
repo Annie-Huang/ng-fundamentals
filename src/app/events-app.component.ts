@@ -14,11 +14,15 @@ For styles and script use the below session:
             ],
             "scripts": [],
  */
+// template: `
+//     <nav-bar></nav-bar>
+//     <event-list></event-list>
+//   `
 @Component({
   selector: 'events-app',
   template: `
     <nav-bar></nav-bar>
-    <event-list></event-list>
+    <router-outlet></router-outlet>
   `
 })
 export class EventsAppComponent {

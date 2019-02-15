@@ -7,7 +7,7 @@ import {ToastrService} from '../common/toastr.service';
 //   <h3>{{thumbnail.someProperty}}</h3>
 // <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo</button>
 @Component({
-  selector: 'event-list',
+  // selector: 'event-list',
   template: `
     <div>
       <h1>Upcoming Angular Events</h1>
