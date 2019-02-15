@@ -114,6 +114,8 @@ and in other cases, we should get them from the local browser storage. We'd have
 D:\react\ng-fundamentals>npm install toastr --save
 
 
+6. Routing and Navigating Pages
+###########################################
 
 
 
