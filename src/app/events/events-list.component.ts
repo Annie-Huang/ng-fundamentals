@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
-
-declare let toastr;
+import {ToastrService} from '../common/toastr.service';
+// declare let toastr;
 
 // <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
 //   <h3>{{thumbnail.someProperty}}</h3>
@@ -27,7 +27,7 @@ export class EventsListComponent implements OnInit {
   // and like we are saying:
   // eventService
   // (inside the constructor: this.eventService = eventService.
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -37,7 +37,8 @@ export class EventsListComponent implements OnInit {
   }
 
   handleThumbnailClick(eventName) {
-    toastr.success(eventName);
+    // toastr.success(eventName);
+    this.toastr.success(eventName);
   }
 
 }
