@@ -16,6 +16,13 @@ export class LoginComponent {
     this.authService.loginUser(formValues.userName, formValues.password);
     this.router.navigate(['events']);
   }
+  // validation includes:
+  // loginForm.controls.userName.valid
+  // loginForm.controls.userName.invalid
+  // loginForm.controls.userName.dirty
+  // loginForm.controls.userName.pristine
+  // loginForm.controls.userName.touched
+  // loginForm.controls.userName.untouched
 
   cancel() {
     this.router.navigate(['events']);
