@@ -21,7 +21,8 @@ import {ToastrService} from '../common/toastr.service';
   `
 })
 export class EventsListComponent implements OnInit {
-  events: any[];
+  // events: any[];
+  events: any;
 
   // Remember this private syntax right here is shorthand for saying essentially that we have a property on our class like this
   // and like we are saying:
@@ -33,7 +34,10 @@ export class EventsListComponent implements OnInit {
   ngOnInit() {
     // It's really not a good idea to put things in your constructor that are potentially long running.
     // And eventually this will be an ajax call. And so this will take a little while to fetch those events.
-    this.events = this.eventService.getEvents();
+    // this.events = this.eventService.getEvents();
+    this.eventService.getEvents().subscribe(event => {
+      this.events = event;
+    });
   }
 
   handleThumbnailClick(eventName) {

@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs';
 
 // This injectable decorator isn't really required for this service.
 // Because this decorator is only required when you inject a service which also injects other services as dependencies of its own.
@@ -8,7 +9,11 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class EventService {
   getEvents() {
-    return EVENTS;
+    // return EVENTS;
+    const subject = new Subject();
+    setTimeout(() => {subject.next(EVENTS); subject.complete(); },
+      2000)
+    return subject;
   }
 
   getEvent(id: number) {
