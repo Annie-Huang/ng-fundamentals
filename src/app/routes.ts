@@ -11,7 +11,7 @@ import {EventsListResolver} from './events/events-list-resolver.service';
 //  and when that resolver finishes and returns us some data, add this data to the route as a property named events.
 export const appRoutes: Routes = [
   { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent'] },
-  { path: 'events', component: EventsListComponent, resolve: {event: EventsListResolver} },
+  { path: 'events', component: EventsListComponent, resolve: {events: EventsListResolver} },
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator] },
   { path: '404', component: Error404Component },
   { path: '', redirectTo: '/events', pathMatch: 'full'}

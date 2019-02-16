@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
 import {ToastrService} from '../common/toastr.service';
+import {ActivatedRoute} from '@angular/router';
 // declare let toastr;
 
 // <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
@@ -28,16 +29,17 @@ export class EventsListComponent implements OnInit {
   // and like we are saying:
   // eventService
   // (inside the constructor: this.eventService = eventService.
-  constructor(private eventService: EventService, private toastr: ToastrService) {
+  constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
     // It's really not a good idea to put things in your constructor that are potentially long running.
     // And eventually this will be an ajax call. And so this will take a little while to fetch those events.
     // this.events = this.eventService.getEvents();
-    this.eventService.getEvents().subscribe(event => {
-      this.events = event;
-    });
+    // this.eventService.getEvents().subscribe(event => {
+    //   this.events = event;
+    // });
+    this.events = this.route.snapshot.data['events'];
   }
 
   handleThumbnailClick(eventName) {
