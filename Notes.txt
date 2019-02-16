@@ -120,7 +120,8 @@ D:\react\ng-fundamentals>npm install toastr --save
 
 7. Collecting Data with Angular Forms and Validation
 ########################################################
-
+run prod mode:
+npm start -- --prod
 
 
 
