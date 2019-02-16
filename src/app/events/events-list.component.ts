@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {EventService} from './shared/event.service';
 import {ToastrService} from '../common/toastr.service';
 import {ActivatedRoute} from '@angular/router';
+import {IEvent} from './shared';
 // declare let toastr;
 
 // <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
@@ -23,7 +24,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class EventsListComponent implements OnInit {
   // events: any[];
-  events: any;
+  // events: any;
+  events: IEvent[];
 
   // Remember this private syntax right here is shorthand for saying essentially that we have a property on our class like this
   // and like we are saying:
