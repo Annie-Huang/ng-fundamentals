@@ -2,7 +2,7 @@
   <h1>Edit Your Profile </h1>
   <hr>
   <div class="col-md-4">
-    <form [formGroup]="profileForm" autocomplete="off" novalidate>
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" novalidate>
       <div class="form-group">
         <label for="firstName">First Name:</label>
         <input formControlName="firstName" id="firstName" type="text" class="form-control" placeholder="First Name..." />
@@ -13,7 +13,7 @@
       </div>
 
       <button type="submit" class="btn btn-primary">Save</button>
-      <button type="button" class="btn btn-default">Cancel</button>
+      <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
     </form>
   </div>
 </div>
