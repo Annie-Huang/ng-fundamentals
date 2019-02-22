@@ -17,6 +17,7 @@ import {ToastrService} from './common/toastr.service';
 import {appRoutes} from './routes';
 import {Error404Component} from './errors/404.component';
 import {AuthService} from './user/auth.service';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // AuthService: Well, that's because providers are shared across Angular modules. So if we add it in our app module,
 // it will be available for us to use here without having to register it as a provider in this module.    << UserModule.
@@ -24,6 +25,8 @@ import {AuthService} from './user/auth.service';
 @NgModule({
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   declarations: [
