@@ -2,6 +2,8 @@ https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-conten
 https://github.com/jmcooper/angular-fundamentals-files
 https://github.com/Annie-Huang/ng-fundamentals
 
+https://angular.io/api/forms/Validators
+
 https://jcoop.io/angular-practice-exercises/
 
 2. Getting Started with Angular
@@ -123,6 +125,7 @@ D:\react\ng-fundamentals>npm install toastr --save
 run prod mode:
 npm start -- --prod
 
+https://angular.io/api/forms/Validators
 
 
 
