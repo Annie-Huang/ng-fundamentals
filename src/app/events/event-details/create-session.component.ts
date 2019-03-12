@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ISession} from '../shared';
 
 @Component({
   templateUrl: './create-session.component.html'
@@ -29,6 +30,15 @@ export class CreateSessionComponent implements OnInit {
   }
 
   saveSession(formValues) {
-    console.log(formValues)
+    const session: ISession = {
+      id: undefined,
+      name: formValues.name,
+      duration: +formValues.duration,
+      level: formValues.level,
+      presenter: formValues.presenter,
+      abstract: formValues.abstract,
+      voters: []
+    };
+    console.log(session);
   }
 }
