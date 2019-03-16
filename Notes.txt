@@ -143,4 +143,6 @@ A component that can show a title and a detail, and collapse to just the title o
 So let's implement that with a new reusable component. 
 
 
+10. Displaying Data with Pipes
+########################################################
 

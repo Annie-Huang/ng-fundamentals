@@ -5,7 +5,7 @@ import {IEvent} from './shared';
   selector: 'event-thumbnail',
   template: `
     <div [routerLink]="['/events', event.id]" class="well hoverwell thumbnail">
-      <h2>{{event?.name}}</h2>
+      <h2>{{event?.name | uppercase}}</h2>
       <div>Date: {{event?.date}}</div>
       <!--<div [class.green]="event?.time === '8:00 am'" [ngSwitch]="event?.time">-->
       <!--<div [ngClass]="{green: event?.time === '8:00 am', bold: event?.time === '8:00 am'}" [ngSwitch]="event?.time">-->
