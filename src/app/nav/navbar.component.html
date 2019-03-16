@@ -30,9 +30,11 @@
           </li>
         </ul>
       </div>
-      <form id="searchForm"  class="navbar-form navbar-right"  >
+      <!-- What's nice about listening to this event (ngSubmit) is it doesn't matter if the user hits enter while in the input box
+      or if they click the button, it's still going to fire the submit event.-->
+      <form id="searchForm" (ngSubmit)="searchSessions(searchTerm)" class="navbar-form navbar-right"  >
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search Sessions" >
+          <input [(ngModel)]="searchTerm" name="searchTerm" type="text" class="form-control" placeholder="Search Sessions" >
         </div>
         <button class="btn btn-default" >
           Search
