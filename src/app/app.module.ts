@@ -27,7 +27,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // what this statement is, this is just a little statement using TypeScript to say that there's already a global Toastr object,
 // so that I can use it inside of my TypeScript and I don't get any errors.
 // declare let toastr: any;
-let toastr: Toastr = window['toastr'];
+const toastr: Toastr = window['toastr'];
 
 // AuthService: Well, that's because providers are shared across Angular modules. So if we add it in our app module,
 // it will be available for us to use here without having to register it as a provider in this module.    << UserModule.
