@@ -16,6 +16,8 @@ import {ISession, restrictedWords} from '../shared';
 })
 export class CreateSessionComponent implements OnInit {
   @Output() saveNewSession = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
+
   newSessionForm: FormGroup;
   name: FormControl;
   presenter: FormControl;
@@ -58,5 +60,9 @@ export class CreateSessionComponent implements OnInit {
     };
     // console.log(session);
     this.saveNewSession.emit(session);
+  }
+
+  cancel() {
+    this.cancelAddSession.emit();
   }
 }
