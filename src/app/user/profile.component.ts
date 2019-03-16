@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from './auth.service';
 import {Router} from '@angular/router';
+import {Toastr, TOASTR_TOKEN} from '../common/toastr.service';
 
 @Component({
   templateUrl: './profile.component.html',
@@ -19,7 +20,11 @@ export class ProfileComponent implements OnInit {
   private firstName: FormControl;
   private lastName: FormControl;
 
-  constructor(private router: Router, private authService: AuthService) {
+  // add that decorator inject, and it's parameter as you can see is a token.
+  // I'm going to use the Toastr token here, and that tells Angular, for this Toastr variable, that we are creating,
+  // that is going to be a private member of this class.
+  // You're going to get your value by using the Toastr token to look up the service in the dependency injection registry.
+  constructor(private router: Router, private authService: AuthService, @Inject(TOASTR_TOKEN) private toastr: Toastr) {
   }
 
   ngOnInit(): void {
@@ -36,7 +41,8 @@ export class ProfileComponent implements OnInit {
   saveProfile(formValues) {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
-      this.router.navigate(['events']);
+      // this.router.navigate(['events']);
+      this.toastr.success('Profile Saved');
     }
   }
 
