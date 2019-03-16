@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({name: 'duration'})
 export class DurationPipe implements PipeTransform {
   // transform(value: any, ...args: any[]): any {
-  transform(value: string): any {
+  transform(value: number): any {
     switch (value) {
       case 1: return 'Half Hour';
       case 2: return 'One Hour';
