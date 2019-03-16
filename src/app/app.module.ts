@@ -17,8 +17,9 @@ import {
 import { EventsAppComponent } from './events-app.component';
 import {NavbarComponent} from './nav/navbar.component';
 // import {ToastrService} from './common/toastr.service';
-import {Toastr, TOASTR_TOKEN} from './common/toastr.service';
-import {CollapsibleWellComponent} from './common/collapsible-well.component';
+// import {Toastr, TOASTR_TOKEN} from './common/toastr.service';
+// import {CollapsibleWellComponent} from './common/collapsible-well.component';
+import {Toastr, TOASTR_TOKEN, CollapsibleWellComponent, JQ_TOKEN} from './common/index';
 import {appRoutes} from './routes';
 import {Error404Component} from './errors/404.component';
 import {AuthService} from './user/auth.service';
@@ -28,6 +29,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // so that I can use it inside of my TypeScript and I don't get any errors.
 // declare let toastr: any;
 const toastr: Toastr = window['toastr'];
+const jQuery = window['$'];
 
 // AuthService: Well, that's because providers are shared across Angular modules. So if we add it in our app module,
 // it will be available for us to use here without having to register it as a provider in this module.    << UserModule.
