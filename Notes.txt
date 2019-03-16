@@ -134,10 +134,13 @@ https://angular.io/api/forms/Validators
 @Output
 
 
+9. Reusing Components with Content Projection
+########################################################
+Content Project is like transclusion in angular 1.
 
-
-
-
+But this sort of functionality is actually fairly reusable type of functionality. 
+A component that can show a title and a detail, and collapse to just the title on click, and then expand just the title on the click. 
+So let's implement that with a new reusable component. 
 
 
 
