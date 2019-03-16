@@ -11,10 +11,11 @@ import {IEvent, ISession} from '../shared';
     a {cursor: pointer;}
   `]
 })
-export class EventDetailsComponent implements OnInit{
+export class EventDetailsComponent implements OnInit {
   // event: any;
   event: IEvent;
   addMode: boolean;
+  filterBy = 'all';
 
   constructor(private eventService: EventService, private route: ActivatedRoute) {
   }
