@@ -130,6 +130,9 @@ https://angular.io/api/forms/Validators
 
 8. Communicating Between Components
 ########################################################
+@Input
+@Output
+
 
 
 
