@@ -1,6 +1,8 @@
-import {Injectable} from '@angular/core';
+// import {Injectable} from '@angular/core';
 
-declare let toastr: any;
+// what this statement is, this is just a little statement using TypeScript to say that there's already a global Toastr object,
+// so that I can use it inside of my TypeScript and I don't get any errors.
+// declare let toastr: any;
 
 // This is our Toastr Service right now, and there's a problem with this Toastr Service.
 // This is important to understand, right now the Toastr Service is just a global, in our index file we've got a reference to the Toastr js file right here.
@@ -34,3 +36,14 @@ declare let toastr: any;
 //     toastr.error(message, title);
 //   }
 // }
+
+import {InjectionToken} from '@angular/core';
+
+export let TOASTR_TOKEN = new InjectionToken()<Toastr>('toastr');
+
+export interface Toastr {
+  success(msg: string, title?: string): void;
+  info(msg: string, title?: string): void;
+  warining(msg: string, title?: string): void;
+  error(msg: string, title?: string): void;
+}
