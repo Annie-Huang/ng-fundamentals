@@ -149,6 +149,12 @@ So let's implement that with a new reusable component.
 
 11. Understanding Angular's Dependency Injection
 ########################################################
+InjectionToken & @Inject()
+useClass
+useValue
+useExisting
+useFactory
+
 
 
 
