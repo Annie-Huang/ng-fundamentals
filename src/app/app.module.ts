@@ -16,6 +16,7 @@ import {
 } from './events/index';
 import { EventsAppComponent } from './events-app.component';
 import {NavbarComponent} from './nav/navbar.component';
+// import {ToastrService} from './common/toastr.service';
 import {Toastr, TOASTR_TOKEN} from './common/toastr.service';
 import {CollapsibleWellComponent} from './common/collapsible-well.component';
 import {appRoutes} from './routes';
