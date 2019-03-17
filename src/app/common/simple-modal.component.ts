@@ -26,6 +26,7 @@ import {JQ_TOKEN} from './jQuery.service';
 export class SimpleModalComponent {
   @Input() title: string;
   @Input() elementId: string;
+  @Input() closeOnBodyClick: string;
 
   // ViewChild DECORATOR
   // Property decorator that configures a view query.
@@ -54,11 +55,13 @@ export class SimpleModalComponent {
   }
 
   closeModal() {
-    // So now we got jQuery, and of course it'll be this, and now we want the raw DOM element that this container El wraps,
-    // so we call this.container. El. nativeElement, and we're getting the underlying DOM element that this container El points to,
-    // which is found by looking up the ref for modalcontainer.
-    // So that's another way of accessing a specific DOM node. And it's a much nicer way to get ahold of a specific DOM node, rather than
-    // getting the parent element ref, and then perhaps drilling down through something like getting elements by class name, for example.
-    this.$(this.containerEl.nativeElement).modal('hide');
+    if (this.closeOnBodyClick.toLocaleLowerCase() === "true") {
+      // So now we got jQuery, and of course it'll be this, and now we want the raw DOM element that this container El wraps,
+      // so we call this.container. El. nativeElement, and we're getting the underlying DOM element that this container El points to,
+      // which is found by looking up the ref for modalcontainer.
+      // So that's another way of accessing a specific DOM node. And it's a much nicer way to get ahold of a specific DOM node, rather than
+      // getting the parent element ref, and then perhaps drilling down through something like getting elements by class name, for example.
+      this.$(this.containerEl.nativeElement).modal('hide');
+    }
   }
 }
