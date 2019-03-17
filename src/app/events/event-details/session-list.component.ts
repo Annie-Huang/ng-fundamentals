@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges} from '@angular/core';
 import {ISession} from '../shared';
 import {AuthService} from '../../user/auth.service';
+import {VoterService} from './voter.service';
 
 @Component({
   selector: 'session-list',
@@ -12,7 +13,7 @@ export class SessionListComponent implements OnChanges {
   @Input() sortBy: string;
   visibleSessions: ISession[] = [];
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private voterService: VoterService) {
   }
 
   // This ngOnChanges method is going to be called every time one of the input variables to this component gets a new value.
@@ -37,7 +38,7 @@ export class SessionListComponent implements OnChanges {
   }
 
   userHasVoted(session: ISession) {
-    this.voterService.userHasVoted(session, this.auth.currentUser.userName);
+    return this.voterService.userHasVoted(session, this.auth.currentUser.userName);
   }
 
   // You can do this filtering in here or event-details.component. Up to you.
