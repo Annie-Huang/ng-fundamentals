@@ -1,4 +1,4 @@
-import {Directive, ElementRef, Inject, OnInit} from '@angular/core';
+import {Directive, ElementRef, Inject, Input, OnInit} from '@angular/core';
 import {JQ_TOKEN} from './jQuery.service';
 
 // Component will be selector: 'XXX'
@@ -8,6 +8,7 @@ import {JQ_TOKEN} from './jQuery.service';
 })
 export class ModalTriggerDirective implements OnInit {
   private el: HTMLElement;
+  @Input('modal-trigger') modalId: string;
 
   // But we don't want the element ref (ElementRef), because that's kind of a wrapper for the DOM element.
   // We want the actual DOM element. So, we're going to create a new property called el,
@@ -21,7 +22,8 @@ export class ModalTriggerDirective implements OnInit {
 
   ngOnInit(): void {
     this.el.addEventListener('click', e => {
-      this.$('#simple-modal').modal({});
+      // this.$('#simple-modal').modal({});
+      this.$(`#${this.modalId}`).modal({});
     });
   }
 }
