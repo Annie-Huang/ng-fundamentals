@@ -33,6 +33,23 @@ export class SimpleModalComponent {
   // If the view DOM changes, and a new child matches the selector, the property is updated.
   @ViewChild('modalcontainer') containerEl: ElementRef;
 
+  // // View children would be used in case you have a list of elements that all have the same ref, for example,
+  // // if we had an ngFor that was iterating over a list of items, and we wanted to get a reference to that entire collection,
+  // // we would use view children for that.
+  // @ViewChildren
+  //
+  // // Then, if we wanted to access a child that is inside the content (<ng-content></ng-content>), that's projected into this component,
+  // // then we wouldn't use view child. We would use content child.
+  // @ContentChild
+  //
+  // // And in the same way that view child has view children, content child has content children.
+  // // And that does the same thing as view children. If the projected content has a list of refs that you want to get a hold of,
+  // // then you would use content children.
+  // @ContentChildren
+  //
+  // // And so those are ways (@ViewChild, @ViewChildren, @ContentChild, @ContentChildren) that you can get access to a specific DOM node,
+  // // without starting at the top and drilling down. And there is a practice exercise for this clip, if you want to do that now.
+
   constructor(@Inject(JQ_TOKEN) private $: any) {
   }
 
