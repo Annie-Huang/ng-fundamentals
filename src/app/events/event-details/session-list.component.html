@@ -1,5 +1,8 @@
 <!--<div class="row" *ngFor="let session of sessions">-->
 <div class="row" *ngFor="let session of visibleSessions">
+  <div class="col-md-1">
+    <upvote (vote)="toggleVote(session)" [count]="session.voters.length" [voted]="userHasVoted(session)"></upvote>
+  </div>
   <div class="col-md-10">
     <!--<div class="well">-->
       <!--<h4>{{session.name}}</h4>-->

@@ -159,3 +159,8 @@ useFactory
 12. Creating Directives and Advanced Components in Angular
 #####################################################################
 
+
+13. More Components and Custom Validators
+########################################################
+
+
