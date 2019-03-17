@@ -19,6 +19,14 @@ export class NavbarComponent {
   constructor(public auth: AuthService, private eventService: EventService) {
   }
 
+  // Puting it into a onSearch method. And we would call that modal and open it up. That's not what we want to do for one very big reason.
+  // That would tightly bind this NavBar component to the implementation of opening up a modal, right?
+  // I mean, this is really under the hoods, is having jQuery call its modal method, which is only there because Bootstrap is also part of what's getting loaded.
+  // So we don't want that. We want to hide these implementation details behind something else, and a great way to do that would be a directive.
+  // onSearch() {
+  //   $('#id').modal();
+  // }
+
   searchSessions(searchTerm) {
     this.eventService.searchSessions(searchTerm).subscribe(sessions => {
       this.foundSessions = sessions;

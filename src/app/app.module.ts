@@ -19,7 +19,14 @@ import {NavbarComponent} from './nav/navbar.component';
 // import {ToastrService} from './common/toastr.service';
 // import {Toastr, TOASTR_TOKEN} from './common/toastr.service';
 // import {CollapsibleWellComponent} from './common/collapsible-well.component';
-import {Toastr, TOASTR_TOKEN, CollapsibleWellComponent, JQ_TOKEN, SimpleModalComponent} from './common/index';
+import {
+  Toastr,
+  TOASTR_TOKEN,
+  CollapsibleWellComponent,
+  JQ_TOKEN,
+  SimpleModalComponent,
+  ModalTriggerDirective
+} from './common/index';
 import {appRoutes} from './routes';
 import {Error404Component} from './errors/404.component';
 import {AuthService} from './user/auth.service';
@@ -53,7 +60,8 @@ const jQuery = window['$'];
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers: [
     EventService,
