@@ -8,9 +8,9 @@ export class LocationValidator implements Validator {
 
   // validate(control: AbstractControl): ValidationErrors | null {
   validate(formGroup: FormGroup): { [key: string]: any } {
-    let addressControl = formGroup.controls['address'];
-    let cityControl = formGroup.controls['city'];
-    let countryControl = formGroup.controls['country'];
+    const addressControl = formGroup.controls['address'];
+    const cityControl = formGroup.controls['city'];
+    const countryControl = formGroup.controls['country'];
 
     // since our validator is on a sibling of the online URL, I'm going to actually go up a level by going to the root,
     // and then I want to get to its controls. Unfortunately the type of root, it's just an abstract control,
@@ -23,7 +23,15 @@ export class LocationValidator implements Validator {
     // so we have this model group right there, and we want this node right here, and to get its online URL.
     // You'll remember, even though we are looking at nodes in here, it's really a tree structure of controls that
     // we're dealing with when we're talking about the form group and its controls and going up to its root.
-    let onlineUrlControl = (<FormGroup>formGroup.root).controls['onlineUrl'];
+    const onlineUrlControl = (<FormGroup>formGroup.root).controls['onlineUrl'];
+
+    if ( (addressControl && addressControl.value && cityControl && cityControl.value && countryControl && countryControl.value)
+      || (onlineUrlControl && onlineUrlControl.value)) {
+      return null;
+
+    } else {
+      return {validateLocation: false};
+    }
   }
 
 }
