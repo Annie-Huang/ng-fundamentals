@@ -26,6 +26,8 @@
     <div ngModelGroup="location" #locationGroup="ngModelGroup" validateLocation>
       <div class="form-group">
         <label for="address">Event Location:</label>
+        <!-- Be aware there is a bug in the following code. It only work if you touch the address/city/country. not actually when you touch and move out to the Online Url field -->
+        <em *ngIf="locationGroup?.invalid && locationGroup?.touched">You must enter either the full location OR an online Url</em>
         <input (ngModel)="newEvent.address" name="address" id="address" type="text" class="form-control" placeholder="Address of event..." />
       </div>
       <div class="row">
