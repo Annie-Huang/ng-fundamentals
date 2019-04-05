@@ -40,7 +40,25 @@
 
     <div class="form-group">
       <label for="onlineUrl">Online Url:</label>
-      <input (ngModel)="newEvent.onlineUrl" name="onlineUrl" id="onlineUrl" type="text" class="form-control" placeholder="Online Url..." />
+      <!-- Refs are available not only in the node and its children, but also in sibling nodes. -->
+      <!-- So here I can refer to that ref and I can access its control property which has an array of controls.
+      The locationGroup refers to this div, this model group essentially, and the control would be the model group's control.
+      And that has the control's array, which would be all of the three different input boxes, the address, the city and the country.
+      And I just want to access one of those three controls.
+      So I'm going to access the address control, and I want to tell it to reevaluate its validation.
+      And I can do that with the updateValueAndValidity method.
+      I just call that right here, and what this will do is every time the value of this input box changes,
+      it will go up to the address control, which is right up here, this input box right here,
+      and tell it rerun your validation which will then reevaluate the validation not only for this,
+      but including this validator that we put up here, because that applies to this input box.
+      It will revalidate it and now if this is valid, then the form will now show it's valid or invalid.  -->
+      <input (ngModel)="newEvent.onlineUrl"
+             name="onlineUrl"
+             id="onlineUrl"
+             type="text"
+             class="form-control"
+             (change)="locationGroup.control.controls.address.updateValueAndValidity()"
+             placeholder="Online Url..." />
     </div>
 
     <div class="form-group" [ngClass]="{'error': newEventForm.controls.imageUrl?.invalid && newEventForm.controls.imageUrl?.touched}">
