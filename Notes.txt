@@ -164,3 +164,21 @@ useFactory
 ########################################################
 
 
+14. Communicating with the Server Using HTTP, Observables, and Rx
+###########################################################################
+Promises are limited to a single value, where observable are not, and 
+promises are asynchronous, where observables are either synchronous or asynchronous.
+
+
+This comes in very handy when dealing with HTTP responses since the data that comes back is often way more than we want, 
+there will be status information, headers, et cetera, when really all we want is to return data. 
+So mapping a response to just the return data is very natural with observables. Observables have a lot of other features that are very valuable as well. 
+
+They can be synchronous or asynchronous, they have improved error handling over how promises work, 
+they can be closed independently of returning a value, and they can also deal with time in a way that promises cannot. 
+There's a bunch of advanced operations they have as well such as mathematical aggregation, buffering, 
+so that you get several results together in batches, 
+or debouncing, so you don't get too many results if they happen too quickly, you can only deal with distinct values, 
+or you can filter the values down to just the ones you want. 
+You can also combine multiple observables into a single observable. 
+And they have a built-in retry mechanism so that if the first try fails, they can retry again. 
