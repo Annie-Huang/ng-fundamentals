@@ -6,6 +6,9 @@ https://angular.io/api/forms/Validators
 
 https://jcoop.io/angular-practice-exercises/
 
+D:\react\ng-fundamentals>npm run server
+
+
 2. Getting Started with Angular
 #####################################
 ng new ng-fundamentals
@@ -182,3 +185,8 @@ or debouncing, so you don't get too many results if they happen too quickly, you
 or you can filter the values down to just the ones you want. 
 You can also combine multiple observables into a single observable. 
 And they have a built-in retry mechanism so that if the first try fails, they can retry again. 
+
+
+D:\react\ng-fundamentals>npm run server
+
+
