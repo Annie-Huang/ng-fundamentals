@@ -49,10 +49,13 @@ export class EventService {
       .pipe(catchError(this.handleError<IEvent>('saveEvent')));
   }
 
-  updateEvent(event) {
-    const index = EVENTS.findIndex(x => x.id = event.id);
-    EVENTS[index] = event;
-  }
+  // So the server that we've created has actually got a smart endpoint, the /api/events endpoint,
+  // notice that if you send up an event that actually has an ID, then you want to do an update.
+  // If you send up an event that doesn't have an ID, then it knows you want to create that event.
+  // updateEvent(event) {
+  //   const index = EVENTS.findIndex(x => x.id = event.id);
+  //   EVENTS[index] = event;
+  // }
 
   searchSessions(searchTerm: string) {
     const term = searchTerm.toLocaleLowerCase();
