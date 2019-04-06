@@ -28,12 +28,15 @@ export class EventDetailsComponent implements OnInit {
     // Normally your state's going to be in these properties, so the event is a piece of state. AddMode is a piece of state.
     // How we're filtering and sorting, those could also be pieces of state as well. We might want to reset those as well.
     this.route.params.forEach((params: Params) => {
-      // Need to convert string into a number:
-      // this.event = this.eventService.getEvent(+params['id']);
-      this.eventService.getEvent(+params['id']).subscribe((event: IEvent) => {
-        this.event = event;
-        this.addMode = false;
-      });
+      // // Need to convert string into a number:
+      // // this.event = this.eventService.getEvent(+params['id']);
+      // this.eventService.getEvent(+params['id']).subscribe((event: IEvent) => {
+      //   this.event = event;
+      //   this.addMode = false;
+      // });
+      this.event = this.route.snapshot.data['event'];
+      this.addMode = false;
+
       // this.addMode = false;
       this.filterBy = 'all';
       this.sortBy = 'votes';
