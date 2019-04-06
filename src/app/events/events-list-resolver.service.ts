@@ -10,6 +10,7 @@ export class EventsListResolver implements Resolve<any> {
 
   // resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
   resolve() {
-    return this.eventService.getEvents().pipe(map(events => events));
+    // return this.eventService.getEvents().pipe(map(events => events));
+    return this.eventService.getEvents();
   }
 }
