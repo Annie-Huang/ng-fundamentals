@@ -193,3 +193,6 @@ D:\react\ng-fundamentals>npm run server
 15. Unit Testing Your Angular Code
 ########################################################
 
+
+16. Testing Angular Components with Integrated Tests
+########################################################
