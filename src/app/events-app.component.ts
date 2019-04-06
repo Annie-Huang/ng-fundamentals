@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthService} from './user/auth.service';
 
 /*
 The reason why /assets/ works is because in angular.json,
@@ -26,5 +27,11 @@ For styles and script use the below session:
   `
 })
 export class EventsAppComponent {
-  title = 'ng-fundamentals';
+  constructor(private auth: AuthService) {
+  }
+
+  // The application is initialized, which is one of the things that happens when we do a hard refresh in the browser
+  ngOnInit() {
+    this.auth.checkAuthenticationStatus();
+  }
 }

@@ -39,6 +39,17 @@ export class AuthService {
     return !!this.currentUser;
   }
 
+  checkAuthenticationStatus() {
+    // This returns no value if the user's not logged in, but if the user is logged in, then it returns their current identity as an object.
+    this.http.get('/api/currentIdentity')
+      .pipe(tap(data => {
+        if (data instanceof Object) {
+          this.currentUser = data as IUser;
+        }
+      }))
+      .subscribe();
+  }
+
   updateCurrentUser(firstName: string, lastName: string) {
     this.currentUser.firstName = firstName;
     this.currentUser.lastName = lastName;
