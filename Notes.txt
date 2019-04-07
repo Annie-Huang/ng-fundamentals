@@ -210,6 +210,8 @@ That process is called the Angular compiler,
 which takes the HTML from your templates and turns it into the JavaScript instructions that manipulate the DOM. 
 This is the main job of the ahead of time compiler.
 
+ng build === ng build --dev
+
 Run:
 ng build
 npm run server		<< This will aut service the build in dist folder if it exist.
