@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule} from '@angular/router';
+import {PreloadAllModules, RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 
 import {
@@ -46,12 +46,16 @@ const jQuery = window['$'];
 // AuthService: Well, that's because providers are shared across Angular modules. So if we add it in our app module,
 // it will be available for us to use here without having to register it as a provider in this module.    << UserModule.
 // It's worth nothing that while this is true for providers, it is not true for imports and declarations.
+
+// This is another important strategy when going to production when trying to tune the performance of your application is
+// to preload modules when you can and also to make your initial module as small as possible.
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
+    // RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadAllModules}),
     HttpClientModule
   ],
   declarations: [

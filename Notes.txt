@@ -200,3 +200,22 @@ D:\react\ng-fundamentals>npm run server
 
 17. Taking an Angular App to Production
 ########################################################
+The biggest job of the AOT is compiling templates. When Angular runs in the browser, a big piece of what goes on is the template. 
+Ultimately, the code that you write needs to show something in the browser so that the user has some interaction. 
+That means manipulating the DOM. We author templates in HTML to let Angular know what needs to be done. 
+We use bindings, events, directives, and components in our HTML templates. This HTML is useless as it is, as we author it. 
+It has to be turned into JavaScript instructions so that the browser can actually manipulate the DOM and render something to the user. 
+
+That process is called the Angular compiler, 
+which takes the HTML from your templates and turns it into the JavaScript instructions that manipulate the DOM. 
+This is the main job of the ahead of time compiler.
+
+Run:
+ng build
+npm run server		<< This will aut service the build in dist folder if it exist.
+Then move everything from D:\react\ng-fundamentals\dist\ng-fundamentals to D:\react\ng-fundamentals\dist\
+Then go to http://localhost:8808
+
+
+
+
