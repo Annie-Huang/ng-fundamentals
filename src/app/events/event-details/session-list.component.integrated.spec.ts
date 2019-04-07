@@ -6,6 +6,7 @@ import {VoterService} from './voter.service';
 import {DurationPipe, ISession} from '../shared';
 import {UpvoteComponent} from './upvote.component';
 import {CollapsibleWellComponent} from '../../common';
+import {By} from '@angular/platform-browser';
 
 
 describe('SessionListComponent', () => {
@@ -59,5 +60,6 @@ describe('SessionListComponent', () => {
     fixture.detectChanges();
 
     expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+    expect(debugEl.query(By.css('[well-title]')).nativeElement.textContent).toContain('Session 1');
   });
 });
