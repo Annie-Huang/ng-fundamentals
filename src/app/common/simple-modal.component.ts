@@ -55,7 +55,7 @@ export class SimpleModalComponent {
   }
 
   closeModal() {
-    if (this.closeOnBodyClick.toLocaleLowerCase() === "true") {
+    if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
       // So now we got jQuery, and of course it'll be this, and now we want the raw DOM element that this container El wraps,
       // so we call this.container. El. nativeElement, and we're getting the underlying DOM element that this container El points to,
       // which is found by looking up the ref for modalcontainer.
