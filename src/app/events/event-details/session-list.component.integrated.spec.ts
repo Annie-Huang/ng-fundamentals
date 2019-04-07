@@ -3,6 +3,9 @@ import {SessionListComponent} from './session-list.component';
 import {DebugElement} from '@angular/core';
 import {AuthService} from '../../user/auth.service';
 import {VoterService} from './voter.service';
+import {DurationPipe, ISession} from '../shared';
+import {UpvoteComponent} from './upvote.component';
+import {CollapsibleWellComponent} from '../../common';
 
 
 describe('SessionListComponent', () => {
@@ -12,13 +15,21 @@ describe('SessionListComponent', () => {
   let debugEl: DebugElement;
 
   beforeEach(async(() => {
-    const mockAuthService = {};
-    const mockVocterService = {};
+    const mockAuthService = {
+      isAuthenticated: () => true,
+      currentUser: {userName: 'Joe'}
+    };
+    const mockVocterService = {
+      userHasVoted: () => true
+    };
 
     TestBed.configureTestingModule({
       imports: [],
       declarations: [
-        SessionListComponent
+        SessionListComponent,
+        UpvoteComponent,
+        DurationPipe,
+        CollapsibleWellComponent
       ],
       providers: [
         { provide: AuthService, useValue: mockAuthService},
@@ -35,4 +46,18 @@ describe('SessionListComponent', () => {
     element = fixture.nativeElement;
   });
 
+  it('should have the correct session title', () => {
+    component.sessions = [
+      {id: 3, name: 'Session 1', presenter: 'Joe', duration: 1, level: 'beginner', abstract: 'abstract', voters: ['john', 'bob']}
+    ] as ISession[];
+
+    component.filterBy = 'all';
+    component.sortBy = 'name';
+    component.eventId = 4;
+
+    component.ngOnChanges();
+    fixture.detectChanges();
+
+    expect(element.querySelector('[well-title]').textContent).toContain('Session 1');
+  });
 });
