@@ -1,12 +1,19 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {SessionListComponent} from './session-list.component';
-import {DebugElement} from '@angular/core';
+import {Component, DebugElement, NO_ERRORS_SCHEMA} from '@angular/core';
 import {AuthService} from '../../user/auth.service';
 import {VoterService} from './voter.service';
 import {DurationPipe, ISession} from '../shared';
-import {UpvoteComponent} from './upvote.component';
+// import {UpvoteComponent} from './upvote.component';
 import {CollapsibleWellComponent} from '../../common';
 import {By} from '@angular/platform-browser';
+
+// // One way to do shallow is to mock the component. e.g.
+// @Component({})
+// class UpvoteComponent {
+//
+// }
+// // Another way is to use NO_ERRORS_SCHEMA
 
 
 describe('SessionListComponent', () => {
@@ -28,15 +35,15 @@ describe('SessionListComponent', () => {
       imports: [],
       declarations: [
         SessionListComponent,
-        UpvoteComponent,
-        DurationPipe,
-        CollapsibleWellComponent
+        // UpvoteComponent,
+        DurationPipe
+        // CollapsibleWellComponent
       ],
       providers: [
         { provide: AuthService, useValue: mockAuthService},
         { provide: VoterService, useValue: mockVocterService},
       ],
-      schemas: []
+      schemas: [NO_ERRORS_SCHEMA]
     });
   }));
 
